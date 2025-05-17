@@ -11,7 +11,7 @@
             <div class="advertorial">
                 <h2>Wij verhuren ook bedrijfswagens</h2>
                 <p>Voor een vaste lage prijs met prettig voordelen.</p>
-                <a href="#" class="button-primary">Huur een bedrijfswagen</a>
+                <a href="/car-detail" class="button-primary">Huur een bedrijfswagen</a>
                 <img src="assets/images/car-rent-header-image-2.png" alt="">
                 <img src="assets/images/header-block-background.svg" alt="" class="background-header-element">
 
@@ -67,7 +67,7 @@
         <?php endfor; ?>
     </div>
     <div class="show-more">
-        <a class="button-primary" href="#">Toon alle</a>
+        <a class="button-primary" href="/ons-aanbod">Toon alle</a>
     </div>
     </main>
 

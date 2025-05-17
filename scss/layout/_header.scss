@@ -32,10 +32,16 @@
   img{
     max-width: 75%;
     margin: 0 auto;
+    
   }
   .background-header-element{
     position: absolute;
 
     z-index: 0;
   }
+  .button-primary {
+    position: relative;
+    z-index: 1;
+  }
+
 }

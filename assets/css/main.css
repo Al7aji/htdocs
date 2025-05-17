@@ -208,6 +208,10 @@ main {
   position: absolute;
   z-index: 0;
 }
+.advertorial .button-primary {
+  position: relative;
+  z-index: 1;
+}
 
 footer {
   background-color: white;
