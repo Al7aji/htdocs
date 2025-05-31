@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 29 mei 2025 om 17:50
+-- Gegenereerd op: 31 mei 2025 om 14:15
 -- Serverversie: 10.4.32-MariaDB
 -- PHP-versie: 8.2.12
 
@@ -29,11 +29,18 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `account` (
   `Account_ID` int(11) NOT NULL,
-  `FirstName` varchar(100) DEFAULT NULL,
-  `LastName` varchar(100) DEFAULT NULL,
-  `Password` varchar(255) DEFAULT NULL,
-  `Email` varchar(100) DEFAULT NULL
+  `FirstName` varchar(100) NOT NULL,
+  `LastName` varchar(100) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  `Email` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Gegevens worden geëxporteerd voor tabel `account`
+--
+
+INSERT INTO `account` (`Account_ID`, `FirstName`, `LastName`, `password`, `Email`) VALUES
+(1, '', '', '$2y$14$x8AvRdeoEp2ymdKd0gY5/usJPkmntMUDbokkEbD9bot6wsq2PT2qi', 'test@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -73,12 +80,32 @@ CREATE TABLE `bookings` (
 CREATE TABLE `cars` (
   `Cars_ID` int(11) NOT NULL,
   `PricePerDay` decimal(10,2) DEFAULT NULL,
-  `Year` year(4) DEFAULT NULL,
   `Model` varchar(50) DEFAULT NULL,
-  `Make` varchar(50) DEFAULT NULL,
+  `type` varchar(50) DEFAULT NULL,
+  `CarGear` varchar(55) NOT NULL,
+  `Capacity` int(11) NOT NULL,
+  `Liters` int(11) NOT NULL,
   `Status` enum('Available','Rented','Maintenance') DEFAULT 'Available',
-  `ImageURL` varchar(255) DEFAULT NULL
+  `Image` varchar(55) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Gegevens worden geëxporteerd voor tabel `cars`
+--
+
+INSERT INTO `cars` (`Cars_ID`, `PricePerDay`, `Model`, `type`, `CarGear`, `Capacity`, `Liters`, `Status`, `Image`) VALUES
+(1, 99.00, 'Koenigegg', 'sport', 'Manual', 2, 90, 'Available', 'car (0).svg'),
+(2, 80.00, 'Nissan GT - R', 'sport', 'Manual', 2, 80, 'Available', 'car (1).svg'),
+(3, 96.00, 'Rolls - Royce', 'Sedan', 'Manual', 4, 70, 'Available', 'car (2).svg'),
+(4, 80.00, 'Nissan GT - R', 'sport', 'Manual', 2, 80, 'Available', 'car (1).svg'),
+(6, 72.00, 'All New Rush', 'SUV', 'Manual', 6, 70, 'Available', 'car (4).svg'),
+(7, 80.00, 'CR  - V', 'SUV', 'Manual', 6, 80, 'Available', 'car (5).svg'),
+(8, 74.00, 'All New Terios', 'SUV', 'Manual', 6, 90, 'Available', 'car (6).svg'),
+(9, 80.00, 'CR  - V', 'SUV', 'Manual', 6, 80, 'Available', 'car (7).svg'),
+(10, 76.00, 'MG ZX Exclusice', 'Hatchback', 'Manual', 4, 70, 'Available', 'car (8).svg'),
+(11, 80.00, 'New MG ZS', 'SUV', 'Manual', 6, 80, 'Available', 'car (9).svg'),
+(12, 74.00, 'MG ZX Exclusice', 'Hatchback', 'Manual', 4, 70, 'Available', 'car (8).svg'),
+(13, NULL, 'New MG ZS', 'SUV', 'Manual', 6, 80, 'Available', 'car (11).svg');
 
 -- --------------------------------------------------------
 
@@ -166,7 +193,7 @@ ALTER TABLE `reviews`
 -- AUTO_INCREMENT voor een tabel `account`
 --
 ALTER TABLE `account`
-  MODIFY `Account_ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `Account_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT voor een tabel `admins`
@@ -184,7 +211,7 @@ ALTER TABLE `bookings`
 -- AUTO_INCREMENT voor een tabel `cars`
 --
 ALTER TABLE `cars`
-  MODIFY `Cars_ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `Cars_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT voor een tabel `customer`

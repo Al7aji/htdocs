@@ -7,8 +7,11 @@ $select_user->bindParam(":email", $_POST['email']);
 $select_user->execute();
 $user = $select_user->fetch(PDO::FETCH_ASSOC);
 
-if (password_verify($_POST['password'], $user['password'])) {
-    $_SESSION['id'] = $user['id'];
+if ($user && password_verify($_POST['password'], $user['password'])) {
+    $_SESSION['id'] = $user['Account_ID'];
     $_SESSION['email'] = $user['email'];
     header('Location: /');
+    exit;
+} else {
+    echo "Onjuist e-mailadres of wachtwoord.";
 }
