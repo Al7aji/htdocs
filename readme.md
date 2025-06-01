@@ -26,7 +26,14 @@ Volg onderstaande stappen om het project op je lokale webserver (XAMPP) te insta
       http://localhost/
       ```
 3. **sass --watch main.scss:../assets/css/main.css**
+    
+   # Start sass
+
+  > sass --watch main.scss:../assets/css/main.css
+   
+
 ---
  `` 
  
  
+

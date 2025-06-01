@@ -1,0 +1,55 @@
+.sidebar{
+    background-color: white;
+    padding: 0.8em 3em ;
+    gap: 1em;
+    
+
+   .All-forms{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+        gap: 2em;
+        align-items: flex-start;
+        h3{
+            text-transform: uppercase;
+            color: #90A3BF;
+            font-weight: 600;
+            font-size: 12px;
+            
+        }
+
+   }
+   form{
+    display: flex;
+    flex-direction: column;
+            .checkbox-item input[type="checkbox"] {
+                width: em;
+                height: 18px;
+                accent-color: #3563E9;
+                border-radius: 20px;
+            }
+            .checkbox-item {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 10px;
+                font-weight: 500;
+                color: #596780;
+                cursor: pointer;
+            }
+            .count {
+                color: #90A3BF;
+                font-size: 14px;
+            }
+            .price input[type="range"] {
+                 width: 100%;
+            }
+          
+            
+                
+   }
+   .range-label{
+    color: #596780;
+   }
+}

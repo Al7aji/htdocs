@@ -396,22 +396,29 @@ footer .footer-links .links ul a {
   display: block;
 }
 
-.car-detail .grid {
+.contener {
+  display: flex;
+  gap: 1em;
+}
+.contener .car-detail {
+  width: 100%;
+}
+.contener .car-detail .grid {
   gap: 50px;
 }
-.car-detail .grid .car-type .row {
+.contener .car-detail .grid .car-type .row {
   display: flex;
   justify-content: space-between;
 }
-.car-detail .call-to-action {
+.contener .car-detail .call-to-action {
   display: flex;
   padding-top: 5em;
 }
-.car-detail .call-to-action .row {
+.contener .car-detail .call-to-action .row {
   justify-content: left !important;
   align-items: center;
 }
-.car-detail .call-to-action .row:last-of-type {
+.contener .car-detail .call-to-action .row:last-of-type {
   display: flex;
   justify-content: flex-end !important;
 }
@@ -482,6 +489,55 @@ footer .footer-links .links ul a {
 }
 .account-form label {
   margin-bottom: 1em;
+}
+
+.sidebar {
+  background-color: white;
+  padding: 0.8em 3em;
+  gap: 1em;
+}
+.sidebar .All-forms {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  gap: 2em;
+  align-items: flex-start;
+}
+.sidebar .All-forms h3 {
+  text-transform: uppercase;
+  color: #90A3BF;
+  font-weight: 600;
+  font-size: 12px;
+}
+.sidebar form {
+  display: flex;
+  flex-direction: column;
+}
+.sidebar form .checkbox-item input[type=checkbox] {
+  width: em;
+  height: 18px;
+  accent-color: #3563E9;
+  border-radius: 20px;
+}
+.sidebar form .checkbox-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  font-weight: 500;
+  color: #596780;
+  cursor: pointer;
+}
+.sidebar form .count {
+  color: #90A3BF;
+  font-size: 14px;
+}
+.sidebar form .price input[type=range] {
+  width: 100%;
+}
+.sidebar .range-label {
+  color: #596780;
 }
 
 /*# sourceMappingURL=main.css.map */
