@@ -3,7 +3,11 @@ $color-primary: #3563e9;
 $color-primary-dark: darken($color-primary, 10%);
 $color-secondary: #54a6ff;
 $color-accent: #f4f5f9;
-
+$white: #ffffff;
+$text-color: #333333;
+$border-color: #e5e7eb;
+$primary-color: #facc15;
+$shadow-color: rgba(0, 0, 0, 0.1);
 $color-text: #1e1e1e;
 $color-muted: #6b7280;
 $color-white: #ffffff;
@@ -35,3 +39,4 @@ $breakpoint-sm: 576px;
 $breakpoint-md: 768px;
 $breakpoint-lg: 992px;
 $breakpoint-xl: 1200px;
+

@@ -1,17 +1,6 @@
-<?php require "includes/header.php" ?>
-
-<?php
-//TODO: Implementeer dat de pagina de juiste auto laat zien op basis van de query paramater 'name'
-//$name = $_GET['name'] ?? null;
-
-//if ($name) {
-//    echo "Toon details van auto met naam: " . htmlspecialchars($name);
-//} else {
-//    echo "Geen auto opgegeven.";
-//}
-
-
-
+<?php 
+require "includes/header.php";
+$car_id = isset($_GET['id']) ? (int)$_GET['id'] : 1;
 ?>
 <main class="car-detail">
     <div class="grid">
@@ -47,6 +36,20 @@
             </div>
         </div>
     </div>
+    
+    <!-- Add Reviews Section -->
+    <div class="reviews-container">
+        <h3>Customer Reviews</h3>
+        <div class="reviews-grid">
+           </div>
+           <?php 
+            // Pass car_id to reviews.php
+            $_GET['id'] = $car_id;
+            require "includes/reviews.php"; 
+            ?>
+    </div>
+      
 </main>
+
 
 <?php require "includes/footer.php" ?>

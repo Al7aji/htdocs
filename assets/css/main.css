@@ -45,6 +45,7 @@ main {
   padding: 10px 20px;
   max-width: fit-content;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .succes-message {
@@ -168,6 +169,64 @@ main {
 .stars.stars-5::before {
   content: "★★★★★";
   color: #facc15;
+}
+
+.reviews-container {
+  margin-top: 2rem;
+  padding: 2rem;
+  background: white;
+  border-radius: 0.5rem;
+}
+.reviews-container h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.reviews-grid {
+  display: block;
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+.review-card {
+  flex: 0 0 calc(50% - 1.5rem);
+  padding: 1.5rem;
+  background: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+@media (max-width: 768px) {
+  .review-card {
+    flex: 0 0 100%;
+  }
+}
+
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.reviewer-info .reviewer-details h4 {
+  margin: 0 0 0.5rem 0;
+  font-weight: bold;
+}
+
+.review-date {
+  font-size: 0.875rem;
+  color: #666;
+}
+
+.review-comment {
+  line-height: 1.5;
+  margin: 0;
+}
+
+.no-reviews {
+  text-align: center;
+  color: #666;
+  padding: 2rem;
 }
 
 .advertorials {
