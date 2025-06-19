@@ -1,3 +1,5 @@
+<?PHP require_once "database/connection.php";?>
+
 <nav class="sidebar">
   <div class="All-forms">
       
@@ -5,10 +7,13 @@
     <div class="type">
       <h3>TYPE</h3>
       <form>
-        
+        <?php
+                $countStmt = $conn->query("SELECT COUNT(*) FROM cars WHERE type = 'Sport'");
+                $count = $countStmt->fetchColumn();;
+     ?>
         <label class="checkbox-item">
           <input type="checkbox" name="type1" value="Sport" />
-          <span>Sport <span class="count">(22)</span></span>
+          <span>Sport <span class="count">( <?php echo  $count; ?> )</span>
         </label>
 
         <label class="checkbox-item">
