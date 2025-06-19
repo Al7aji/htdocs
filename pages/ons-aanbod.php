@@ -15,9 +15,13 @@
             <?PHP require_once "includes/navbarside.php";?>
         </div>
         <div class="col-2">
+            
             <div class="cars">
                 <?php foreach ($cars as $car) : ?>
-                    <div class="car-details"> 
+                    <div class="car-details"
+                            data-price="<?= htmlspecialchars($car['PricePerDay']) ?>"
+                            data-type="<?= htmlspecialchars($car['type']) ?>"
+                            data-capacity="<?= htmlspecialchars($car['Capacity']) ?>">
                         <div class="car-brand">
                             <h3><?= htmlspecialchars(  $car['Model']  ) ?></h3>
                             <div class="car-type">
@@ -41,7 +45,8 @@
     </div>
 </div>
 
-    
 </main>
+<script src="assets/javascript/filter.js"></script>
+
 <?php require "includes/footer.php" ?>
 

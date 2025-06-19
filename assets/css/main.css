@@ -510,17 +510,17 @@ footer .footer-links .links ul a {
   font-weight: 600;
   font-size: 12px;
 }
-.sidebar form {
+.sidebar .filter-form {
   display: flex;
   flex-direction: column;
 }
-.sidebar form .checkbox-item input[type=checkbox] {
+.sidebar .filter-form .checkbox-item input[type=checkbox] {
   width: em;
   height: 18px;
   accent-color: #3563E9;
   border-radius: 20px;
 }
-.sidebar form .checkbox-item {
+.sidebar .filter-form .checkbox-item {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -529,11 +529,11 @@ footer .footer-links .links ul a {
   color: #596780;
   cursor: pointer;
 }
-.sidebar form .count {
+.sidebar .filter-form .count {
   color: #90A3BF;
   font-size: 14px;
 }
-.sidebar form .price input[type=range] {
+.sidebar .filter-form .price input[type=range] {
   width: 100%;
 }
 .sidebar .range-label {
@@ -542,7 +542,7 @@ footer .footer-links .links ul a {
 
 .container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 0fr);
   gap: 20px;
 }
 .container .col-1 {
@@ -551,6 +551,9 @@ footer .footer-links .links ul a {
 .container .col-2 {
   display: flex;
   flex-direction: column;
+}
+.container .col-2 .cars {
+  grid-template-columns: repeat(5, minmax(25%, 2fr));
 }
 
 /*# sourceMappingURL=main.css.map */
