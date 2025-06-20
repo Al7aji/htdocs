@@ -1,0 +1,23 @@
+.container{
+    display: grid;
+    grid-template-columns: repeat(2, 0fr);
+    gap: 20px;
+   .col-1{
+      display: flex;
+      
+      
+
+   }
+   .col-2{
+      display: flex;
+      flex-direction: column;
+      .cars{
+         grid-template-columns: repeat(5, minmax(25%, 2fr));
+      }
+      
+      
+   }
+   
+
+    
+}

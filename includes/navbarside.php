@@ -1,75 +1,84 @@
+<?PHP require_once "database/connection.php";
+
+$sportCount = $conn->query("SELECT COUNT(*) FROM cars WHERE type = 'Sport'")->fetchColumn();
+$suvCount = $conn->query("SELECT COUNT(*) FROM cars WHERE type = 'SUV'")->fetchColumn();
+$sedanCount = $conn->query("SELECT COUNT(*) FROM cars WHERE type = 'Sedan'")->fetchColumn();
+$CoupeCount = $conn->query("SELECT COUNT(*) FROM cars WHERE type = 'Coupe'")->fetchColumn();
+$HatchbackCount = $conn->query("SELECT COUNT(*) FROM cars WHERE type = 'Hatchback'")->fetchColumn();
+$MPVCount = $conn->query("SELECT COUNT(*) FROM cars WHERE type = 'MPV'")->fetchColumn();
+?>
+
 <nav class="sidebar">
   <div class="All-forms">
-      
     <!-- TYPE Section -->
     <div class="type">
       <h3>TYPE</h3>
-      <form>
-        
-        <label class="checkbox-item">
-          <input type="checkbox" name="type1" value="Sport" />
-          <span>Sport <span class="count">(22)</span></span>
-        </label>
+      <div class="filter-form">
+          <label class="checkbox-item">
+            <input type="checkbox" class="filter-type" data-filter="type"   value="sport">
+            <span>Sport <span class="count " >(<?php echo $sportCount; ?>)</span>
+          </label>
 
-        <label class="checkbox-item">
-          <input type="checkbox" name="type2" value="SUV" />
-          <span>SUV <span class="count">(22)</span></span>
-        </label>
+          <label class="checkbox-item">
+              <input type="checkbox"  class="filter-type" data-filter="type" value="SUV" >    
+              <span>SUV <span class="count">(<?php echo $suvCount; ?>)</span>
+          </label>
 
-        <label class="checkbox-item">
-          <input type="checkbox" name="type3" value="Sedan" />
-          <span>Sedan <span class="count">(12)</span></span>
-        </label>
+          <label class="checkbox-item">
+            <input type="checkbox" class="filter-type" data-filter="type" value="Sedan" 
+            <span>Sedan <span class="count">(<?php echo $sedanCount; ?>)</span>
+          </label>
 
-        <label class="checkbox-item">
-          <input type="checkbox" name="type4" value="Coupe" />
-          <span>Coupe <span class="count">(333)</span></span>
-        </label>
+          <label class="checkbox-item">
+            <input type="checkbox" class="filter-type" data-filter="type" value="Coupe" />
+            <span>Coupe <span class="count">(<?php echo $CoupeCount; ?>)</span>
+          </label>
 
-        <label class="checkbox-item">
-          <input type="checkbox" name="type5" value="Hatchback" />
-          <span>Hatchback <span class="count">(33)</span></span>
-        </label>
+          <label class="checkbox-item">
+            <input type="checkbox" class="filter-type" data-filter="type" value="Hatchback" />
+            <span>Hatchback <span class="count">(<?php echo $HatchbackCount; ?>)</span>
+          </label>
 
-        <label class="checkbox-item">
-          <input type="checkbox" name="type6" value="MPV" />
-          <span>MPV <span class="count">(33)</span></span>
-        </label>
-
-      </form>
+          <label class="checkbox-item">
+            <input type="checkbox" class="filter-type" data-filter="type" value="MPV" />
+            <span>MPV <span class="count">(<?php echo $MPVCount; ?>)</span>
+          </label>
+        </div>
+      
     </div>
 
     <!-- CAPACITY Section -->
     <div class="capacity">
       <h3>CAPACITY</h3>
-      <form>
+      <div class="filter-form">
         <label class="checkbox-item">
-          <input type="checkbox" name="cap1" value="2Person" />
-          <span>2 Person <span class="count">()</span></span>
+          <input type="checkbox"  class="filter-type"  data-filter="capacity" value="2" />
+          <span>2 Person <span class="count">()</span>
         </label>
         <label class="checkbox-item">
-          <input type="checkbox" name="cap2" value="4Person" />
-          <span>4 Person <span class="count">()</span></span>
+          <input type="checkbox" class="filter-type"  data-filter="capacity" value="4" />
+          <span>4 Person <span class="count">()</span>
         </label>
         <label class="checkbox-item">
-          <input type="checkbox" name="cap3" value="6Person" />
-          <span>6 Person <span class="count">()</span></span>
+          <input type="checkbox" class="filter-type"  data-filter="capacity" value="6" />
+          <span>6 Person <span class="count">()</span>
         </label>
         <label class="checkbox-item">
-          <input type="checkbox" name="cap4" value="8Person" />
-          <span>8 or More <span class="count">()</span></span>
+          <input type="checkbox"  class="filter-type" data-filter="capacity"  value="8" />
+          <span>8 or More <span class="count">()</span>
         </label>
-      </form>
+      </div>
     </div>
 
     <!-- PRICE Section -->
     <div class="price">
       <h3>PRICE</h3>
       <form>
-        <input type="range" id="price-range" name="price" min="0" max="100" />
-        <label  class="range-label"for="price-range">Max. $100.00</label>
+        <input type="range" id="price-range" name="price" min="72" max="150" value="150" />
+        <label  class="range-label"for="price-range"></label>
       </form>
     </div>
-
+       
   </div>
+<script src="assets/javascript/filter.js"></script>
 </nav>
