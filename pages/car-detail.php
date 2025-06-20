@@ -1,22 +1,27 @@
 <?php require "includes/header.php" ?>
 
+<?PHP require_once "database/connection.php";?>
+
+
 <?php
-//TODO: Implementeer dat de pagina de juiste auto laat zien op basis van de query paramater 'name'
-//$name = $_GET['name'] ?? null;
 
-//if ($name) {
-//    echo "Toon details van auto met naam: " . htmlspecialchars($name);
-//} else {
-//    echo "Geen auto opgegeven.";
-//}
+if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
+    die("Ongeldig voertuig-ID.");
+}
 
+$carId = (int)$_GET['id'];
 
+$stmt = $conn->prepare("SELECT * FROM cars WHERE Cars_ID = ?");
+$stmt->execute([$carId]);
+$car = $stmt->fetch(PDO::FETCH_ASSOC);
 
+if (!$car) {
+    die("De auto bestaat niet.");
+}
 ?>
 <div class="contener">
     <?PHP require_once "includes/navbarside.php";?>
     <main class="car-detail">
-        
         <div class="grid">
             <div class="row">
                 <div class="advertorial">
@@ -47,11 +52,16 @@
                         <div class="row"><span class="font-weight-bold">€<?= number_format($car['PricePerDay'], 2, ',', '.') ?></span> / dag</div>
                         <div class="row"><a href="#" class="button-primary">Huur nu</a></div>
                     </div>
-                    
                 </div>
             </div>
         </div>
-    </div>
-</main>
+        <div class="reviews-container">
+            <?php 
+            $_GET['id'] = $carId; // Pass the car ID to reviews.php
+            require "includes/reviews.php"; 
+            ?>
+        </div>
+    </main>
+</div>
 
 <?php require "includes/footer.php" ?>

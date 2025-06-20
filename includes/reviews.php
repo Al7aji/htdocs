@@ -1,5 +1,5 @@
 <?php
-require_once "database/connection.php"; 
+require_once "database/connection.php";
 
 // Add debugging
 error_reporting(E_ALL);
@@ -41,25 +41,30 @@ try {
     <div class="reviews-grid">
         <?php if ($reviews): ?>
             <?php foreach ($reviews as $review): ?>
-                <div class="review-card">
-                    <div class="review-header">
-                        <div class="reviewer-info">
-                            <div class="reviewer-details">
-                                <h4><?php echo htmlspecialchars($review['FirstName'] . ' ' . $review['LastName']); ?></h4>
-                                <div class="stars stars-<?php echo htmlspecialchars($review['Rating']); ?>"></div>
-                            </div>
-                        </div>
-                        <span class="review-date">
-                            <?php echo date('F j, Y', strtotime($review['ReviewDate'])); ?>
-                        </span>
-                    </div>
-                    <p class="review-comment">
-                        <?php echo htmlspecialchars($review['Comment']); ?>
-                    </p>
+    <div class="review-card">
+        <div class="review-header">
+            <div class="reviewer-info">
+                <div class="profile-image">
+                    <img class="reviewer-avatar" 
+                         src="assets/images/team/<?php echo htmlspecialchars($review['Image']); ?>" 
+                         alt="Reviewer Image">
                 </div>
-            <?php endforeach; ?>
+                <div class="reviewer-details">
+                    <h4><?php echo htmlspecialchars($review['FirstName'] . ' ' . $review['LastName']); ?></h4>
+                    <div class="stars stars-<?php echo htmlspecialchars($review['Rating']); ?>"></div>
+                </div>
+            </div>
+            <span class="review-date">
+                <?php echo date('F j, Y', strtotime($review['ReviewDate'])); ?>
+            </span>
+        </div>
+        <p class="review-comment">
+            <?php echo htmlspecialchars($review['Comment']); ?>
+        </p>
+    </div>
+<?php endforeach; ?>
         <?php else: ?>
-            <p class="no-reviews">No reviews yet for this car.</p>
+            <p class="no-reviews">No reviews found for this car.</p>
         <?php endif; ?>
     </div>
 </div>
