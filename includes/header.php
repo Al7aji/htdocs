@@ -21,14 +21,20 @@
         </a>
     </div>
     <form action="">
-        <input type="search" name="" id="" placeholder="Welke auto wilt u huren?">
-        <img src="assets/images/icons/search-normal.svg" alt="" class="search-icon">
+        <input type="search" id="searchInput" placeholder="Welke auto wilt u huren?">
+        <img src="assets/images/icons/search-normal.svg" class="search-icon" alt="Zoek">
     </form>
+
+    
+
+
+
     <nav>
         <ul>
             <li><a href="/">Home</a></li>
             <li><a href="/ons-aanbod">Ons aanbod</a></li>
             <li><a href="/over-ons">Hulp nodig?</a></li>
+            <li><a href="/Het-team">Het Team</a></li>
         </ul>
     </nav>
     <div class="menu">
@@ -49,3 +55,6 @@
     </div>
 </div>
 <div class="content">
+<div id="results"></div>
+
+<script src="assets/javascript/search.js"></script>

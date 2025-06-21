@@ -1,6 +1,6 @@
 <?php require "includes/header.php" ?>
 <?php require_once "database/connection.php";?>
-
+    <header>
         <?php
         $stmt =  $conn ->query("SELECT * FROM cars LIMIT 1");  
         $cars = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -10,8 +10,8 @@
                 <div class="advertorial">
                     <h2>Hét platform om een auto te huren</h2>
                     <p>Snel en eenvoudig een auto huren. Natuurlijk voor een lage prijs.</p>
-                    <a href="#" class="button-primary">Huur nu een auto</a>
-                    <img src="assets/images/car-rent-header-image-1.png" alt="">
+                    <a href="/car-detail?id=<?= $car['Cars_ID'] ?>"class="button-primary">Huur nu een auto</a>
+                    <img class="carimage" src="assets/images/products/<?= htmlspecialchars($car['Image'])?>"  alt="">
                     <img src="assets/images/header-circle-background.svg" alt="" class="background-header-element">
                 </div>
                 <div class="advertorial">
@@ -24,7 +24,7 @@
                 </div>
             </div>
         <?php endforeach; ?>
-    </header>
+    
     </header>
 
     <main>
