@@ -25,7 +25,7 @@ $MPVCount = $conn->query("SELECT COUNT(*) FROM cars WHERE type = 'MPV'")->fetchC
           </label>
 
           <label class="checkbox-item">
-            <input type="checkbox" class="filter-type" data-filter="type" value="Sedan" 
+            <input type="checkbox" class="filter-type" data-filter="type" value="Sedan" >
             <span>Sedan <span class="count">(<?php echo $sedanCount; ?>)</span>
           </label>
 
