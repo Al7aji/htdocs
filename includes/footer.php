@@ -57,7 +57,7 @@
         <button class="modal-close">&times;</button>
     </div>
 </div>
-<script src="assets/javascript/main.js"></script>
+<script src="../assets/javascript/main.js"></script>
 
 </body>
 </html>

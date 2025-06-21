@@ -1,4 +1,4 @@
-<?php require "includes/header.php" ?>
+<?php require "includes/header.php"; ?>
 
 <?PHP require_once "database/connection.php";?>
 
@@ -50,7 +50,7 @@ if (!$car) {
                     </div>
                     <div class="call-to-action">
                         <div class="row"><span class="font-weight-bold">€<?= number_format($car['PricePerDay'], 2, ',', '.') ?></span> / dag</div>
-                        <div class="row"><a href="#" class="button-primary">Huur nu</a></div>
+                        <div class="row"><a href="pages/booking.php?car_id=<?= $car['Cars_ID'] ?>" class="button-primary">Huur nu</a></div>
                     </div>
                 </div>
             </div>
