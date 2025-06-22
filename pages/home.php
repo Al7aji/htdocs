@@ -26,9 +26,9 @@
         <?php endforeach; ?>
     
     </header>
-
-    <main>
-             
+            
+     <main>
+             <?php require_once "pages/pickup.php"; ?>
         <?php
         $stmt =  $conn ->query("SELECT * FROM cars LIMIT 4");  
         $cars = $stmt->fetchAll(PDO::FETCH_ASSOC);

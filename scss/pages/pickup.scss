@@ -1,0 +1,50 @@
+  .form-container {
+      display: flex;
+      
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      overflow: hidden;
+    }
+
+    .form-section {
+      padding: 20px 30px;
+      display: flex;
+      flex-direction: row;
+      gap: 15px;
+      border-right: 1px solid #eee;
+      
+    }
+
+    .form-section:last-child {
+      border-right: none;
+    }
+
+    .form-title {
+      font-weight: bold;
+      color: #333;
+    }
+
+    label {
+      font-size: 14px;
+      color: #555;
+    }
+
+    select, input[type="date"], input[type="time"] {
+      padding: 8px 10px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      
+      width: 180px;
+    }
+
+    .switch-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #3d65ff;
+      color: white;
+      padding: 0 20px;
+      font-size: 20px;
+      cursor: pointer;
+    }
