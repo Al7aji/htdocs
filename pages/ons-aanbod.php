@@ -15,7 +15,7 @@
             <?PHP require_once "includes/navbarside.php";?>
         </div>
         <div class="col-2">
-            
+             <?php require_once "pages/pickup.php"; ?>
             <div class="cars">
                 <?php foreach ($cars as $car) : ?>
                     <div class="car-details"
