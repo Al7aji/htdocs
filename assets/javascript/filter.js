@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const cars = document.querySelectorAll(".car-details");
 
   function applyFilters() {
-    // اجمع الفلاتر المحددة حسب النوع
+    
     const selectedTypes = Array.from(document.querySelectorAll('input[data-filter="type"]:checked')).map(cb => cb.value);
     const selectedCapacities = Array.from(document.querySelectorAll('input[data-filter="capacity"]:checked')).map(cb => cb.value);
 
@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
       }
 
-      // عرض السيارة فقط إذا تطابق النوع والسعة معًا
+      
       if (matchType && matchCapacity) {
         car.style.display = "block";
       } else {
@@ -57,10 +57,10 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // ✅ فلترة عند تحريك الشريط
+  
   priceRange.addEventListener("input", filterCarsByPrice);
 
-  // ✅ فلترة مباشرة عند تحميل الصفحة
+  
   filterCarsByPrice();
 });
 

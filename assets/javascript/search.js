@@ -13,7 +13,7 @@
             document.getElementById("results").innerHTML = data;
             })
             .catch(err => {
-            console.error("حدث خطأ أثناء البحث:", err);
+            console.error("", err);
             });
         });
     
