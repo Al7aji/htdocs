@@ -67,13 +67,8 @@ if (!$car) {
         $cars = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     ?>
-<div class="container">
-        <div class="col-1">
-            <?PHP require_once "includes/navbarside.php";?>
-        </div>
-        <div class="col-2">
-             <?php require_once "pages/pickup.php"; ?>
-            <div class="cars">
+    <?PHP require_once "includes/navbarside.php";?>
+                <div class="cars">
                 <?php foreach ($cars as $car) : ?>
                     <div class="car-details"
                             data-price="<?= htmlspecialchars($car['PricePerDay']) ?>"
@@ -98,10 +93,6 @@ if (!$car) {
                     </div>
                 <?php endforeach; ?>
             </div>
-        </div>
-    </div>
-</div>
     </main>
-</div>
 
 <?php require "includes/footer.php" ?>

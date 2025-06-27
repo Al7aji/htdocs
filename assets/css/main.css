@@ -636,7 +636,7 @@ footer .footer-links .links ul a {
   flex-direction: column;
 }
 .container .col-2 .cars {
-  grid-template-columns: repeat(5, minmax(25%, 2fr));
+  ggrid-template-columns: repeat(4, minmax(275px, 2fr));
 }
 
 .team-section {
@@ -801,7 +801,6 @@ footer .footer-links .links ul a {
 }
 
 .form-container {
-  display: flex;
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
   overflow: hidden;
